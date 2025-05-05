@@ -135,6 +135,18 @@ st.title("\U0001F512 Secure Data Encryption System")
 menu = ["Home", "Login", "Register", "Store Data", "Retrieve Data"]
 choice = st.sidebar.selectbox("Navigation", menu)
 
+# About section (always visible in sidebar below the menu)
+with st.sidebar.expander("📖 About This App", expanded=False):
+    st.markdown("""
+    **Secure Data System** helps you:
+    - 🔐 Store and retrieve encrypted data
+    - 🛡️ Use passkey-based AES encryption
+    - 🧂 Benefit from PBKDF2 password hashing with salt
+    - ⏱️ Auto lock out after failed login attempts
+
+    _Built with Streamlit, SQLite, and the Cryptography library._
+    """)
+
 if choice == "Home":
     st.subheader("\U0001F3E0 Welcome to the Secure Data System")
     st.write("Use this app to securely store and retrieve data using unique passkeys.")
